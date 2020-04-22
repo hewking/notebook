@@ -1,7 +1,8 @@
 {
     "defaultSeverity": "error",
     "extends": [
-      "../../tslint.json"
+      "../../tslint.json",
+      "tslint-react-hooks"
     ],
     "rules": {
       "react-hooks-nesting": "error",
