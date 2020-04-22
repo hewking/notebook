@@ -22,5 +22,12 @@
   },
   "bugs": {
     "url": "https://github.com/hewking/notebook/issues"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "tslint": "^6.1.1",
+    "typescript": "^3.8.3"
   }
 }
