@@ -18,7 +18,7 @@ function App() {
         justifyContent: "center"
       }}>
         <div>
-          Notebook:{content}
+          Notebook:{(content as any).data}
         </div>
       </Content>
     </div>

@@ -9,7 +9,7 @@ export const seEnv = (netEnv: ENV = 'test') => {
 
 const appConfig = {
   test: {
-    baseUrl: "",
+    baseUrl: "http://localhost:8080/",
   }
 }
 
