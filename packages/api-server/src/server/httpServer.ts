@@ -19,7 +19,7 @@ export function bootstrapHttpServer() {
   })
 
   app.listen(8080, () => {
-    console.log(`Example app listening at http://localhost:${port}`)
+    console.log(`🚀 Example app listening at http://localhost:${port}`)
   });
 
 }
