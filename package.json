@@ -1,6 +1,11 @@
 {
-  "name": "root",
+  "name": "notebook",
   "private": true,
+  "scripts": {
+    "bootstrap":"lerna bootstrap",
+    "app:start": "lerna run --stream --scope app-main start",
+    "travis": "npm run bootstrap && npm run lint && npm run test && npm run build"
+  },
   "devDependencies": {
     "lerna": "^3.20.2"
   }
