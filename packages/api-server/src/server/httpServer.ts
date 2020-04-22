@@ -5,7 +5,9 @@ export function bootstrapHttpServer() {
   const port = 8080;
 
   app.get('/', (req, res) => {
-    res.send('Hello World!');
+    res.send({
+      data:"hello world!"
+    });
   })
 
   app.listen(8080, () => {
