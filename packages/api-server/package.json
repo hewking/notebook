@@ -18,7 +18,8 @@
     "url": "git+https://github.com/hewking/notebook.git"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "dev": "ts-node-dev src/server/index.ts"
   },
   "bugs": {
     "url": "https://github.com/hewking/notebook/issues"
@@ -27,6 +28,7 @@
     "express": "^4.17.1"
   },
   "devDependencies": {
+    "ts-node-dev": "^1.0.0-pre.44",
     "tslint": "^6.1.1",
     "typescript": "^3.8.3"
   }
