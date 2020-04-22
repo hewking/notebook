@@ -1,0 +1,17 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+      "../../tslint.json"
+    ],
+    "rules": {
+      "react-hooks-nesting": "error",
+      "array-type": false,
+      "max-classes-per-file": false
+    },
+    "linterOptions": {
+      "exclude": [
+          "**/*.js"
+      ]
+    }
+  }
+  

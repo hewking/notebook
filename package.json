@@ -1,12 +1,41 @@
 {
-  "name": "notebook",
-  "private": true,
-  "scripts": {
-    "bootstrap":"lerna bootstrap",
-    "app:start": "lerna run --stream --scope app-main start",
-    "travis": "npm run bootstrap && npm run lint && npm run test && npm run build"
+  "defaultSeverity": "error",
+  "extends": [
+    "tslint:recommended"
+  ],
+  "jsRules": {
+    "quotemark": false,
+    "object-literal-sort-keys": false
   },
+  "scripts": {
+    "bootsrap": "lernam bootstrap",
+    "clean": "lerna clean",
+    "lint": "lerna run --parallel --stream lint"
+  },
+  "rules": {
+    "object-literal-sort-keys": false,
+    "ordered-imports": false,
+    "no-console": false,
+    "radix": false,
+    "align": false,
+    "quotemark": false,
+    "file-name-casing": [
+      true,
+      "camel-case"
+    ],
+    "indent": [
+      true,
+      "spaces",
+      2
+    ],
+    "member-access": false,
+    "interface-name": false,
+    "trailing-comma": false,
+    "arrow-parens": false
+  },
+  "rulesDirectory": [],
   "devDependencies": {
-    "lerna": "^3.20.2"
+    "tslint": "^6.1.1",
+    "typescript": "^3.8.3"
   }
 }
