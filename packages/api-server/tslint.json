@@ -12,7 +12,6 @@
     },
     "linterOptions": {
         "exclude": [
-            "src/*.ts",
             "**/*.js"
         ]
     },
