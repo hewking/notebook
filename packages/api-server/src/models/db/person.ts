@@ -9,10 +9,8 @@ class Person extends Model<Person> {
   @Column
   birthday: Date;
 
-  @HasMany(() => Hobby)
-  hobbies: Hobby[];
 }
 
 export interface Hobby {
-
+  hobby: string;
 }

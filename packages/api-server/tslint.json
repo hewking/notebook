@@ -4,6 +4,17 @@
         "tslint:recommended"
     ],
     "jsRules": {},
-    "rules": {},
+    "rules": {
+        "react-hooks-nesting": "error",
+        "array-type": false,
+        "max-classes-per-file": false,
+        "no-console": false
+    },
+    "linterOptions": {
+        "exclude": [
+            "src/*.ts",
+            "**/*.js"
+        ]
+    },
     "rulesDirectory": []
 }
