@@ -5,7 +5,7 @@ const test = {
     port: 3306,
     databasename: 'notebook',
     username: 'root',
-    password: 'aaaaaaa1.',
+    password: 'aaaaaaa1',
     maxConnections: 500,
     minConnections: 10,
     idle: 10000,

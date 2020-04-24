@@ -19,6 +19,18 @@ export const buildDbConnection = () => {
     },
     modelPaths: [path.join(__dirname, '../../../models/db/')],
   });
+
+  testConnection();
+
+};
+
+const testConnection = async () => {
+  try {
+    await dbContext!!.authenticate();
+    console.log('Connection has been established successfully.');
+  } catch (error) {
+    console.error('Unable to connect to the database:', error);
+  }
 };
 
 export const getDbContext = () => {
