@@ -1,17 +1,20 @@
 import { Table, Column, Model, HasMany } from 'sequelize-typescript';
-import { STRING, DATE } from 'sequelize/types';
+import { STRING, DATE, NUMBER } from 'sequelize/types';
 
 @Table({ tableName: 'person' })
 class Person extends Model<Person> {
 
   @Column(STRING)
-  name: string;
+  public name!: string;
 
   @Column(STRING)
-  public phone: string;
+  public phone!: string;
+
+  @Column(NUMBER)
+  public age!: number;
 
   @Column(DATE)
-  birthday: Date;
+  public birthday!: Date | null;
 
   // @HasMany(() => Person)
   // children: Person[];
