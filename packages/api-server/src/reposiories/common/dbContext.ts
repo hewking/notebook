@@ -33,6 +33,12 @@ const testConnection = async () => {
   }
 };
 
+export const close = () => {
+  if (dbContext) {
+    dbContext.close();
+  }
+};
+
 export const getDbContext = () => {
   return dbContext;
 };

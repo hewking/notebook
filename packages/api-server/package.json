@@ -20,7 +20,8 @@
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
     "dev": "ts-node-dev src/server/index.ts",
-    "build": "tsc"
+    "build": "tsc",
+    "jest": "jest"
   },
   "bugs": {
     "url": "https://github.com/hewking/notebook/issues"
