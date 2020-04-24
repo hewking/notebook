@@ -17,7 +17,7 @@ export const buildDbConnection = () => {
       min: config.database.minConnections,
       idle: config.database.idle,
     },
-    modelPaths: [path.join(__dirname, '../../models/db/')],
+    modelPaths: [path.join(__dirname, '../../../models/db/')],
   });
 };
 
