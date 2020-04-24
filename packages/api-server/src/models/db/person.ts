@@ -1,16 +1,16 @@
 import { Table, Column, Model, HasMany } from 'sequelize-typescript';
-import { STRING } from 'sequelize/types';
+import { STRING, DATE } from 'sequelize/types';
 
 @Table({ tableName: 'person' })
 class Person extends Model<Person> {
 
-  @Column
+  @Column(STRING)
   name: string;
 
   @Column(STRING)
   public phone: string;
 
-  @Column
+  @Column(DATE)
   birthday: Date;
 
   @HasMany(() => Person)
