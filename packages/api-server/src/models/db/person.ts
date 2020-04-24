@@ -13,6 +13,6 @@ class Person extends Model<Person> {
   @Column(DATE)
   birthday: Date;
 
-  @HasMany(() => Person)
-  children: Person[];
+  // @HasMany(() => Person)
+  // children: Person[];
 }
