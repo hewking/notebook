@@ -4,7 +4,7 @@ import path from 'path';
 
 let dbContext: Sequelize | null = null;
 
-export const buildDbConnection = () => {
+export const buildDbConnection = async () => {
   dbContext = new Sequelize({
     dialect: config.database.driver as any,
     host: config.database.host,
@@ -20,7 +20,7 @@ export const buildDbConnection = () => {
     modelPaths: [path.join(__dirname, '../../../models/db/')],
   });
 
-  testConnection();
+  await testConnection();
 
 };
 

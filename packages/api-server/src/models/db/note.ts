@@ -13,7 +13,7 @@ export default class NoteEntity extends Model<NoteEntity> {
     public title!: string;
 
     @Column(DATE)
-    public time!: Date;
+    public date!: Date;
 
     @Column(STRING)
     public content!: string;
