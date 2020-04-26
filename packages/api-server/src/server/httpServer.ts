@@ -41,6 +41,7 @@ export function bootstrapHttpServer() {
 
   app.get('/getAllNotes', async (req, res) => {
     const notes = await NoteService.getAllNotes();
+    console.log('notes',notes);
     res.send({
       code: 0,
       data: notes,

@@ -3,10 +3,10 @@ import { useEffect, useRef, useState } from 'react';
 import config from '../config';
 
 function useHelloWorld() {
-  const [content, setContent] = useState('');
+  const [content, setContent] = useState({});
 
   useEffect(() => {
-    fetch('http://localhost:8080/', {
+    fetch("http://localhost:8080/getAllNotes", {
       method: "GET",
       headers: {
         'Content-Type': 'application/json',
@@ -17,7 +17,7 @@ function useHelloWorld() {
       }).then(data => {
         setContent(data);
       })
-  });
+  },[]);
 
   return {
     content,
