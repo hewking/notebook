@@ -1,8 +1,8 @@
 import { Table, Column, Model, HasMany, AutoIncrement, PrimaryKey } from 'sequelize-typescript';
-import { STRING, DATE, NUMBER } from 'sequelize/types';
+import { STRING, DATE, NUMBER } from 'sequelize';
 
 @Table({ tableName: 'person' })
-class PersonEntity extends Model<PersonEntity> {
+export default class PersonEntity extends Model<PersonEntity> {
 
   @PrimaryKey
   @AutoIncrement

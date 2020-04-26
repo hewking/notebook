@@ -1,12 +1,12 @@
 import { Model, Table, PrimaryKey, Column, AutoIncrement } from "sequelize-typescript";
-import { NUMBER, STRING, DATE } from "sequelize/types";
+import { NUMBER, STRING, DATE, INET, INTEGER } from "sequelize";
 
 @Table({ tableName: "notes" })
 export default class NoteEntity extends Model<NoteEntity> {
 
     @PrimaryKey
     @AutoIncrement
-    @Column(NUMBER)
+    @Column(INTEGER)
     public id!: number;
 
     @Column(STRING)

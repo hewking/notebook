@@ -1,6 +1,7 @@
 import { Sequelize } from 'sequelize-typescript';
 import config from '../../config/config';
 import path from 'path';
+import NoteEntity from '../../models/db/note';
 
 let dbContext: Sequelize | null = null;
 
@@ -17,11 +18,16 @@ export const buildDbConnection = async () => {
       min: config.database.minConnections,
       idle: config.database.idle,
     },
-    modelPaths: [path.join(__dirname, '../../../models/db/')],
+    modelPaths: [path.join(__dirname, '../../models/db/')],
   });
 
+  // dbContext.addModels([NoteEntity]);
   await testConnection();
+  await sycnModels();
+};
 
+export const sycnModels = async () => {
+  NoteEntity.sync({ force: true });
 };
 
 const testConnection = async () => {
