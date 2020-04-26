@@ -1,4 +1,5 @@
 import React from 'react';
+import { Router, Route } from 'react-router'
 import logo from '../logo.svg';
 import './App.css';
 import { Layout } from 'antd';
@@ -9,7 +10,7 @@ function App() {
   const { content } = useHelloWorld();
   console.log('content', content)
   return (
-    <div className="App">
+    <>
       <Header>
         NoteBook
       </Header>
@@ -19,12 +20,13 @@ function App() {
         justifyContent: "center"
       }}>
         <div>
+          <Route></Route>
           {(content as any).data && (content as any).data.map((it: any) => {
             return <Text>{it.title}</Text>
           })}
         </div>
       </Content>
-    </div>
+    </>
   );
 }
 
