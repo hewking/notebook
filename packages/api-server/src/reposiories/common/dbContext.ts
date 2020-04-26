@@ -26,8 +26,11 @@ export const buildDbConnection = async () => {
   await sycnModels();
 };
 
+/**
+ * 如果表不存在就创建
+ */
 export const sycnModels = async () => {
-  NoteEntity.sync({ force: true });
+  NoteEntity.sync();
 };
 
 const testConnection = async () => {
