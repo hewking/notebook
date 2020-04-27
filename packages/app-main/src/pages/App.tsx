@@ -3,66 +3,63 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  withRouter,
 } from "react-router-dom";
-import logo from '../logo.svg';
+import {
+  createBrowserHistory,
+  createHashHistory
+} from 'history';
+import { useHistory } from 'react-router';
 import './App.css';
-import { Layout } from 'antd';
-import useHelloWorld from '../hooks/userFetchNote';
-import Text from '../components/text';
+import { Layout, Button, message } from 'antd';
 import Note from './note';
+import AddNote from './note/addNote';
 const { Header, Content } = Layout;
 function App() {
-  const { content } = useHelloWorld();
-  console.log('content', content)
+
+  const history = useHistory();
+
+  const toAddNote = () => {
+    console.log('toAddNote');
+    // history.push("/addNote");
+    history.push({
+      pathname:"/addNote",
+      state:{
+        from:"home",
+      }
+    });
+  };
+
   return (
     <>
       <Header>
-        NoteBook
+        <h2>NoteBook</h2>
       </Header>
       <Content style={{
         display: "flex",
         alignItems: "center",
         justifyContent: "center"
       }}>
-        <div>
-          <Route></Route>
-          {(content as any).data && (content as any).data.map((it: any) => {
-            return <Text>{it.title}</Text>
-          })}
-        </div>
+        <Router>
+          <div>
+            <nav>
+              <Button onClick={toAddNote}>Add Note</Button>
+              <Link to='/addNote'>to AddNote</Link>
+            </nav>
+            <Switch>
+              <Route path='/addNote'>
+                <AddNote/>
+              </Route>
+              <Route path="/">
+                <Note />
+              </Route>
+            </Switch>
+          </div>
+        </Router>
       </Content>
     </>
   );
 }
 
-const RouteApp = () => {
-  return (<Router>
-    <ul>
-      <li><Link to="./note"> to Note</Link></li>
-      <li><Link to="./app">to Home</Link></li>
-    </ul>
-    <Switch>
-      <Route route="./note">
-        <Note1/>
-      </Route>
-      <Route route="./app">
-        <App1/>
-      </Route>
-    </Switch>
-  </Router>);
-}
-
-function Note1() {
-  return (<div>
-    <h1>Note1</h1>
-  </div>);
-}
-
-function App1(){
-  return (<div>
-    <h1>App1</h1>
-  </div>);
-}
-
-export default RouteApp;
+export default App;

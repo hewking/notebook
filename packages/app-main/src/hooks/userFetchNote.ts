@@ -1,9 +1,10 @@
 
 import { useEffect, useRef, useState } from 'react';
 import config from '../config';
+import { Note } from '../models/note/note';
 
-function useHelloWorld() {
-  const [content, setContent] = useState({});
+function useFetchNote() {
+  const [notes, setNotes] = useState<Note[]>([]);
 
   useEffect(() => {
     fetch("http://localhost:8080/getAllNotes", {
@@ -15,13 +16,13 @@ function useHelloWorld() {
       .then((response) => {
         return response.json();
       }).then(data => {
-        setContent(data);
+        setNotes(data.data);
       })
   },[]);
 
   return {
-    content,
+    notes,
   }
 }
 
-export default useHelloWorld;
+export default useFetchNote;
