@@ -30,7 +30,7 @@ export const buildDbConnection = async () => {
  * 如果表不存在就创建
  */
 export const sycnModels = async () => {
-  NoteEntity.sync();
+  // NoteEntity.sync();
 };
 
 const testConnection = async () => {

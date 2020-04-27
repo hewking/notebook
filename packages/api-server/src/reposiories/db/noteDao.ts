@@ -20,7 +20,7 @@ export const deleteNoteById = async (id: number) => {
 
 export const getAllNotes = async (): Promise<NoteEntity[]> => {
     return NoteEntity.findAll({
-        attributes: ['id', 'title'],
+        attributes: ['id', 'title', "content", "updatedAt"],
     });
 };
 
