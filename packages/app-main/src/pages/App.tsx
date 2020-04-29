@@ -22,7 +22,6 @@ function App() {
 
   const toAddNote = () => {
     console.log('toAddNote');
-    // history.push("/addNote");
     history.push({
       pathname:"/addNote",
       state:{
