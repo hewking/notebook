@@ -16,6 +16,8 @@ import { Layout, Button, message } from 'antd';
 import Note from './note';
 import AddNote from '../components/addNote';
 const { Header, Content } = Layout;
+import HText from '../components/controller/text';
+
 function App() {
 
   const history = useHistory();
@@ -24,9 +26,8 @@ function App() {
     console.log('toAddNote');
     history.push({
       pathname:"/addNote",
-      state:{
-        from:"home",
-      }
+      state:{    
+        from :"home",
     });
   };
 
@@ -49,16 +50,18 @@ function App() {
             <Switch>
               <Route path='/addNote'>
                 <AddNote/>
-              </Route>
+              </Route>  
               <Route path="/">
                 <Note />
               </Route>
             </Switch>
+              {/* <HText text={'测试下一按cssmodule'} /> */}
           </div>
         </Router>
       </Content>
     </>
   );
 }
-
+                      
 export default App;
+                      

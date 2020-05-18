@@ -1,9 +1,10 @@
 import React from 'react';
 import classNames from 'classnames';
+import styles from './text.module.scss';
 
 type Pattern = 'normal';
 
-export default function Text({
+export default function HText({
   pattern,
   text
 }: {
@@ -11,7 +12,7 @@ export default function Text({
   text: string;
 }) {
 
-  return <span>
+  return <span className={styles.text}>
     {text}
   </span>
 }
