@@ -14,7 +14,7 @@ import { useHistory } from 'react-router';
 import './App.css';
 import { Layout, Button, message } from 'antd';
 import Note from './note';
-import AddNote from './note/addNote';
+import AddNote from '../components/addNote';
 const { Header, Content } = Layout;
 function App() {
 

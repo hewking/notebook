@@ -1,8 +1,8 @@
 import { Route, Switch, Link, BrowserRouter as Router } from "react-router-dom";
 import React from "react";
 import NotePage from "../../pages/note";
-import AddNote from "../../pages/note/addNote";
-import App from '../../pages/app';
+import AddNote from "../../components/addNote";
+import App from '../../pages/App';
 // Some folks find value in a centralized route config.
 // A route config is just data. React is great at mapping
 // data into components, and <Route> is a component.
@@ -10,6 +10,13 @@ import App from '../../pages/app';
 // Our route config is just an array of logical "routes"
 // with `path` and `component` props, ordered the same
 // way you'd do inside a `<Switch>`.
+
+const Test = () => {
+  return <div>
+    <p> Test Page </p>
+  </div>
+}
+
 const routes = [
   {
     path: "/",
@@ -18,16 +25,12 @@ const routes = [
   {
     path: "/addNote",
     component: AddNote,
-    // routes: [
-    //   {
-    //     path: "/tacos/bus",
-    //     component: Bus
-    //   },
-    //   {
-    //     path: "/tacos/cart",
-    //     component: Cart
-    //   }
-    // ]
+    routes: [
+      {
+        path: "/test",
+        component: Test,
+      },
+    ]
   },
 ];
 

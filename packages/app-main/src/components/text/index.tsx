@@ -1,7 +1,17 @@
 import React from 'react';
+import classNames from 'classnames';
 
-export default function Text(props: any) {
-  return <span {...props}>
-    {props.children}
+type Pattern = 'normal';
+
+export default function Text({
+  pattern,
+  text
+}: {
+  pattern: Pattern,
+  text: string;
+}) {
+
+  return <span>
+    {text}
   </span>
 }
