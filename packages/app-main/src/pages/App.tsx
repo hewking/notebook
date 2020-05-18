@@ -11,7 +11,7 @@ import {
   createHashHistory
 } from 'history';
 import { useHistory } from 'react-router';
-import './App.css';
+import './App.scss';
 import { Layout, Button, message } from 'antd';
 import Note from './note';
 import AddNote from '../components/addNote';
