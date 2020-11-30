@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -15,8 +16,8 @@ import './App.scss';
 import { Layout, Button, message } from 'antd';
 import Note from './note';
 import AddNote from '../components/addNote';
+
 const { Header, Content } = Layout;
-import HText from '../components/controller/text';
 
 function App() {
 
@@ -26,9 +27,9 @@ function App() {
     console.log('toAddNote');
     history.push({
       pathname:"/addNote",
-      state:{    
+      state:{
         from :"home",
-    });
+    }});
   };
 
   return (
@@ -50,7 +51,7 @@ function App() {
             <Switch>
               <Route path='/addNote'>
                 <AddNote/>
-              </Route>  
+              </Route>
               <Route path="/">
                 <Note />
               </Route>
